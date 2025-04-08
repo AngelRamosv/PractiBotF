@@ -1,0 +1,7 @@
+{
+  "name": "PractiBotF",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
