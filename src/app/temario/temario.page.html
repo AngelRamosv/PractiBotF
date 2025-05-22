@@ -1,0 +1,74 @@
+<ion-header>
+  <ion-toolbar class="main-toolbar">
+    <ion-buttons slot="start">
+      <ion-menu-button auto-hide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="titulo">Temario</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-menu side="start" menuId="main-menu" contentId="main-content">
+  <ion-header>
+    <ion-toolbar class="menu-toolbar">
+      <ion-title>Menú</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <ion-item button (click)="miprogreso()">
+        <ion-icon name="bar-chart" slot="start"></ion-icon>
+        <ion-label>Mi progreso</ion-label>
+      </ion-item>
+      
+      <ion-item button detail="false">
+        <ion-icon name="information-circle" slot="start"></ion-icon>
+        <ion-label>Acerca de la app</ion-label>
+      </ion-item>
+
+      <ion-item button (click)="confirmarCierreSesion()">
+        <ion-icon name="log-out" slot="start"></ion-icon>
+        <ion-label>Cerrar sesión</ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-content id="main-content">
+  <div class="content-container">
+    <div class="image-container">
+      <img src="assets/icon/libro.png" alt="Usuario">
+    </div>
+
+    <ion-list lines="full" class="temas-list">
+      <ion-item button detail (click)="irAIntroduccion()">
+        <ion-icon name="document-text-outline" slot="start" color="primary"></ion-icon>
+        <ion-label>Introducción</ion-label>
+      </ion-item>
+      
+      <ion-item button detail>
+        <ion-icon name="repeat" slot="start" color="primary"></ion-icon>
+        <ion-label>Estructuras de control</ion-label>
+      </ion-item>
+      
+      <ion-item button detail>
+        <ion-icon name="list" slot="start" color="primary"></ion-icon>
+        <ion-label>Arreglos</ion-label>
+      </ion-item>
+      
+      <ion-item button detail>
+        <ion-icon name="grid" slot="start" color="primary"></ion-icon>
+        <ion-label>Matrices</ion-label>
+      </ion-item>
+      
+      <ion-item button detail>
+        <ion-icon name="git-merge" slot="start" color="primary"></ion-icon>
+        <ion-label>Funciones</ion-label>
+      </ion-item>
+
+      <ion-item button detail>
+        <ion-icon name="text" slot="start" color="primary"></ion-icon>
+        <ion-label>Strings</ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

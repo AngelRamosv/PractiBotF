@@ -1,0 +1,47 @@
+.titulo {
+  text-align: center;
+  color: white;
+  font-weight: bold;
+}
+
+.toolbar {
+  --background: #4e52c0;
+  color: white;
+}
+
+/* Imagen centrada */
+.image-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 32px;
+}
+
+.image-container img {
+  width: 90px;
+  height: auto;
+  padding-top: 50px;
+}
+
+.no {
+  padding-top: 35px;
+}
+
+.button-container {
+
+    ion-button {
+    --border-radius: 70px; /* Bordes redondeados */
+    --padding-start: 20px; /* Espacio a la izquierda */
+    --padding-end: 20px; /* Espacio a la derecha */
+    --color: white; /* Color del texto */
+    --background: #3d41ab;
+    margin: 10px auto; /* Centra el botón y agregar margen */
+    max-width: 90%; /* Ocupa casi todo el ancho, pero no completamente */
+    padding-top: 80px;
+  }
+}
+
+
+
+
+
+

@@ -1,0 +1,56 @@
+/* Estructura segura */
+.content-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 20px;
+}
+
+.toolbar {
+  --background: #3d41ab;
+  --color: white;
+}
+
+.titulo {
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Imagen centrada */
+.image-container {
+  text-align: center;
+  margin: 20px 0 40px;
+  
+  img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+  }
+}
+
+/* Cajas de texto */
+.text-boxes {
+  margin-bottom: 30px;
+  
+  .custom-item {
+    --background: transparent;
+    --border-color: var(--ion-color-medium);
+    margin-bottom: 15px;
+    border-radius: 8px;
+    
+    ion-input {
+      --padding-start: 12px;
+    }
+  }
+}
+
+.custom-button {
+  --border-radius: 70px; /* Bordes redondeados */
+  --padding-start: 20px; /* Espacio a la izquierda */
+  --padding-end: 20px; /* Espacio a la derecha */
+  --color: white; /* Color del texto */
+  --background: #3d41ab;
+  margin: 10px auto; /* Centra el botón y agregar margen */
+  max-width: 90%; /* Ocupa casi todo el ancho, pero no completamente */
+  margin-top: 110px;
+}

@@ -1,0 +1,48 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="toolbar">
+    <ion-title class="titulo">Mi Progreso</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="header-image">
+    <img src="assets/icon/objetivo.png" alt="Progreso">
+  </div>
+
+  <ion-card *ngIf="progresos.length === 0" class="empty-state">
+    <ion-card-content>
+      <ion-icon name="trophy-outline" class="empty-icon"></ion-icon>
+      <h2>Aún no tienes registros</h2>
+      <p>Completa ejercicios para ver tu progreso aquí</p>
+    </ion-card-content>
+  </ion-card>
+
+  <div *ngFor="let progreso of progresos" class="progress-item">
+    <ion-card [color]="getColorPuntuacion(progreso.puntuacion)">
+      <ion-card-header>
+        <ion-card-title>
+          <ion-icon [name]="getIconoPuntuacion(progreso.puntuacion)"></ion-icon>
+          {{ progreso.tema }}
+        </ion-card-title>
+        <ion-card-subtitle>Nivel: {{ progreso.nivel | titlecase }}</ion-card-subtitle>
+      </ion-card-header>
+      
+      <ion-card-content>
+        <ion-item lines="none">
+          <ion-icon name="trophy-outline" slot="start"></ion-icon>
+          <ion-label>Puntuación: {{ progreso.puntuacion }}/10</ion-label>
+        </ion-item>
+        
+        <ion-item lines="none">
+          <ion-icon name="time-outline" slot="start"></ion-icon>
+          <ion-label>Tiempo: {{ progreso.tiempo | number:'1.1-1' }} min</ion-label>
+        </ion-item>
+        
+        <ion-item lines="none">
+          <ion-icon name="speedometer-outline" slot="start"></ion-icon>
+          <ion-label>Fecha: {{ progreso.fecha }}</ion-label>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

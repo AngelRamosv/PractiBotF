@@ -1,20 +1,30 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+<ion-header>
+  <ion-toolbar class="toolbar">
+    <ion-title class="titulo">PractiBot</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <!-- Subtítulo -->
+  <h2 class="subtitle">Fundamentos de Programación</h2>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <!-- Imagen de fondo (sin inert para evitar problemas) -->
+  <div class="image-container" inert>
+    <img src="assets/icon/chatbot.png" alt="" role="presentation">
   </div>
-</ion-content>
+
+  <!-- Contenedor del código que ocupará todo el ancho -->
+  <div class="code-container">
+    <div id="single-line-code" [class.typing-complete]="typingComplete"></div>
+  </div>
+
+  <!-- Párrafo -->
+  <p class="description">¡Aprende a programar con nuestra App!</p>
+  <p class="description">PractiBot te ayudara en tu progreso</p>
+
+  <!-- Botones -->
+  <div class="buttons">
+    <ion-button expand="block" class="custom-button" (click)="Inicio()">Inicio</ion-button>
+    <ion-button expand="block" class="custom-button" (click)="Formulario()">Registrarse</ion-button>
+  </div>
+</ion-content> 

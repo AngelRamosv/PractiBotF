@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar class="toolbar">
+    <ion-title class="titulo">Inicio</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="content-container">
+    <div class="image-container">
+      <img src="assets/icon/user.png" alt="">
+    </div>
+
+    <div class="text-boxes">
+      <ion-item class="custom-item">
+        <ion-input [(ngModel)]="credenciales.usuario" placeholder="Usuario" aria-label="Campo de usuario"></ion-input>
+      </ion-item>
+
+      <ion-item class="custom-item">
+        <ion-input [(ngModel)]="credenciales.contrasena" type="password" placeholder="Contraseña" aria-label="Campo de contraseña"></ion-input>
+      </ion-item>
+    </div>
+
+    <div class="button-container">
+      <ion-button (click)="iniciarSesion()"expand="block" class="custom-button" aria-label="Botón de inicio">
+        Iniciar sesión
+      </ion-button>
+    </div>
+  </div>
+</ion-content>

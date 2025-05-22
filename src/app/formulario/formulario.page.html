@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar class="toolbar">
+    <ion-title class="titulo">Formulario</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="contenedor">
+    <!-- Imagen -->
+    <div class="image-container">
+      <img src="assets/icon/form.png" alt="">
+    </div>
+
+    <!-- Campos del formulario con clases fijas -->
+     <div class="no">
+<ion-item class="form-item">
+      <ion-input [(ngModel)]="formData.usuario" placeholder="Usuario"></ion-input>
+    </ion-item>
+
+    <ion-item class="form-item">
+      <ion-input [(ngModel)]="formData.contrasena" type="password" placeholder="Contraseña"></ion-input>
+    </ion-item>
+
+    <ion-item class="form-item">
+      <ion-input [(ngModel)]="formData.matricula" placeholder="Matrícula"></ion-input>
+    </ion-item>
+
+    <ion-item class="form-item">
+      <ion-select [(ngModel)]="formData.conocimientosProgramacion" 
+                placeholder="¿Tienes conocimientos en programación?">
+        <ion-select-option value="Sí">Sí</ion-select-option>
+        <ion-select-option value="No">No</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <div class="button-container">
+      <ion-button (click)="guardarDatos()" expand="block">Guardar</ion-button>
+    </div>
+
+    </div>
+    
+  </div>
+</ion-content>
