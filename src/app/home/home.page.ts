@@ -16,10 +16,8 @@ import { CommonModule } from '@angular/common';
   ]
 })
 export class HomePage implements OnInit {
-  // Mantenemos tus colores (#3d41ab) en el código
-  codeLines = [
-    'print("Hola Mundo en Python");',
-  ];
+  // Solo una línea de código
+  codeLine = 'print("Hola Mundo en Python");';
   typingComplete = false;
 
   ngOnInit() {
@@ -30,23 +28,13 @@ export class HomePage implements OnInit {
     const codeElement = document.getElementById('single-line-code');
     if (!codeElement) return;
 
-    // Conservamos todas tus clases CSS existentes
     codeElement.classList.add('permanent-glow');
     codeElement.textContent = '';
     
-    // Escribimos línea por línea manteniendo tu estilo
-    for (let i = 0; i < this.codeLines.length; i++) {
-      // Escribimos cada carácter con delay (conservando tu animación)
-      for (const char of this.codeLines[i]) {
-        codeElement.textContent += char;
-        await this.delay(50 + Math.random() * 30);
-      }
-
-      // Agregamos salto de línea solo si no es la última línea
-      if (i < this.codeLines.length - 1) {
-        codeElement.textContent += '\n';
-        await this.delay(100); // Breve pausa entre líneas
-      }
+    // Escribimos solo la línea única
+    for (const char of this.codeLine) {
+      codeElement.textContent += char;
+      await this.delay(50 + Math.random() * 30);
     }
 
     this.typingComplete = true;
@@ -56,7 +44,6 @@ export class HomePage implements OnInit {
     return new Promise(resolve => setTimeout(resolve, ms));
   }
 
-  // Tus métodos de navegación existentes
   Inicio() {
     this.router.navigate(['/inicio']);
   }

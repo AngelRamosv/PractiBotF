@@ -27,15 +27,16 @@ ion-content {
   position: relative;
   width: 150px;
   margin: 50px auto;
-  animation: floatElegant 4s ease-in-out infinite;
+  /*animation: floatElegant 4s ease-in-out infinite;*/
   
   img {
     width: 100%;
     display: block; 
-    will-change: transform; /* Optimización de rendimiento */
+    /*will-change: transform; /* Optimización de rendimiento */
   }
 }
 
+/*
 @keyframes floatElegant {
   0%, 100% {
     transform: translateY(0) translateX(0) scale(1);
@@ -50,6 +51,7 @@ ion-content {
     transform: translateY(-8px) translateX(1px) scale(1.015);
   }
 }
+*/
 
 .description {
   text-align: center;
@@ -58,6 +60,7 @@ ion-content {
   font-weight: 500;
   font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
 
+  
   /* Decoración moderna */
   &:first-of-type {
     font-size: 1.2em;
@@ -82,10 +85,9 @@ ion-content {
   --color: white;
   --background: #3d41ab;
   margin: 0 auto;
-  width: 90%;
-  max-width: 300px;
+  width: 100%;
+  
 }
-
 
 /* Estilo base del código */
 #single-line-code {
@@ -119,13 +121,6 @@ ion-content {
   animation: gentle-pulse 3s infinite alternate;
 }
 
-/* Animación de respiración sutil */
-@keyframes gentle-pulse {
-  0% { opacity: 0.8; }
-  100% { opacity: 1; }
-}
-
-//
 /* Añade esto al final de tu home.page.scss */
 #single-line-code {
   white-space: pre; /* Necesario para mostrar saltos de línea */

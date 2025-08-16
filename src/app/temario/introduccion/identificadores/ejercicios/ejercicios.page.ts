@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { 
-  IonHeader, IonToolbar, IonTitle, IonContent, 
+import {
+  IonHeader, IonToolbar, IonTitle, IonContent,
   IonItem, IonSelect, IonSelectOption, IonButton,
   ToastController, IonCardTitle, IonCardContent, IonCardHeader,
   IonList, IonLabel, IonCard, IonCardSubtitle, IonCheckbox,
@@ -32,17 +32,17 @@ interface Progreso {
     IonCardContent, IonCardHeader, IonList, IonLabel, IonCard, IonCardSubtitle,
     IonCheckbox, IonIcon, IonProgressBar
   ],
-  providers: [AlertController] 
+  providers: [AlertController]
 })
 export class EjerciciosPage {
   selectedLevel: string | null = null;
-  
+
   colabUrls = {
-    basico: 'https://colab.research.google.com/drive/1fSMH0seNyRpSMSvQ01l7-g_CLq7W7009',
-    intermedio: 'https://colab.research.google.com/drive/ENLACE_INTERMEDIO',
-    avanzado: 'https://colab.research.google.com/drive/ENLACE_AVANZADO'
+    basico: 'https://colab.research.google.com/drive/1xc3JasGun7dgl52k5nDrUyfu4uXY_4vv#scrollTo=1jxh0CUTGBdr',
+    intermedio: 'https://colab.research.google.com/drive/15x-zHJqVZesN9unkFbDY53o61aBA08dD',
+    avanzado: 'https://colab.research.google.com/drive/11cyKbNe7ZSYpsE1bbLTcpwCp21yIaUcE'
   };
-  
+
   colabWindow: Window | null = null;
   startTime: number = 0;
   checkInterval: any;
@@ -70,7 +70,7 @@ export class EjerciciosPage {
     }
 
     this.esEjercicioNuevo = !(await this.verificarEjercicioResuelto());
-    
+
     if (!this.esEjercicioNuevo) {
       const confirm = await this.mostrarConfirmacion();
       if (!confirm) {
@@ -120,7 +120,7 @@ export class EjerciciosPage {
   private iniciarEjercicio() {
     this.startTime = Date.now();
     this.colabWindow = window.open(this.colabUrls[this.selectedLevel as keyof typeof this.colabUrls], '_blank');
-    
+
     const timeUpdater = setInterval(() => {
       this.elapsedMinutes = (Date.now() - this.startTime) / 60000;
     }, 1000);
@@ -170,7 +170,7 @@ export class EjerciciosPage {
 
   private guardarProgreso() {
     const historial: Progreso[] = JSON.parse(localStorage.getItem('progreso') || '[]');
-    
+
     const nuevoProgreso: Progreso = {
       fecha: new Date().toLocaleString(),
       nivel: this.selectedLevel || 'desconocido',
@@ -190,7 +190,7 @@ export class EjerciciosPage {
   }
 
   private getTemaPorNivel(): string {
-    const temas: {[key: string]: string} = {
+    const temas: { [key: string]: string } = {
       basico: 'Introducción a Python',
       intermedio: 'Funciones y estructuras',
       avanzado: 'Programación avanzada'
@@ -223,7 +223,7 @@ export class EjerciciosPage {
       "¡Buen trabajo! Has demostrado comprensión del tema.",
       "¡Impresionante! Dominas este concepto completamente."
     ];
-    
+
     if (this.score <= 4) return messages[0];
     if (this.score <= 7) return messages[1];
     if (this.score <= 9) return messages[2];
