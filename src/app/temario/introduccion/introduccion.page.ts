@@ -1,18 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { 
-  IonContent, IonHeader, IonTitle, IonToolbar, 
-  IonButtons, IonMenuButton, IonList, IonItem, 
-  IonIcon, IonLabel, NavController 
+import {
+  IonContent, IonHeader, IonTitle, IonToolbar,
+  IonButtons, IonMenuButton, IonList, IonItem,
+  IonIcon, IonLabel, NavController
 } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
-import { 
-  code, 
-  repeat, 
-  list, 
-  grid, 
-  gitMerge, 
+import {
+  code,
+  repeat,
+  list,
+  grid,
+  gitMerge,
   text,
   cube,
   calculator,
@@ -26,16 +26,16 @@ import {
   styleUrls: ['./introduccion.page.scss'],
   standalone: true,
   imports: [
-    IonContent, 
-    IonHeader, 
-    IonTitle, 
-    IonToolbar, 
-    CommonModule, 
-    FormsModule, 
-    IonButtons, 
+    IonContent,
+    IonHeader,
+    IonTitle,
+    IonToolbar,
+    CommonModule,
+    FormsModule,
+    IonButtons,
     IonMenuButton,
     IonList,
-    IonItem, 
+    IonItem,
     IonIcon,
     IonLabel
   ]
@@ -49,12 +49,12 @@ export class IntroduccionPage implements OnInit {
   ];
 
   constructor(private navCtrl: NavController) {
-    addIcons({ 
-      code, 
-      repeat, 
-      list, 
-      grid, 
-      gitMerge, 
+    addIcons({
+      code,
+      repeat,
+      list,
+      grid,
+      gitMerge,
       text,
       cube,
       calculator,
@@ -69,8 +69,17 @@ export class IntroduccionPage implements OnInit {
   navegarATema(tema: string) {
     console.log('Navegando a:', tema);
   }
-  
+
   irIdentificadores() {
     this.navCtrl.navigateForward('/identificadores');
+  }
+  irVariables() {
+    this.navCtrl.navigateForward('/variables');
+  }
+  irTipos() {
+    this.navCtrl.navigateForward('/tipos-datos-simples');
+  }
+  irOperadores() {
+    this.navCtrl.navigateForward('/operadores');
   }
 }

@@ -50,4 +50,16 @@ export const routes: Routes = [
     path: 'operadores',
     loadComponent: () => import('./temario/introduccion/operadores/operadores.page').then(m => m.OperadoresPage)
   },
+  {
+    path: 'ejerciciosv',
+    loadComponent: () => import('./temario/introduccion/variables/ejerciciosv/ejerciciosv.page').then( m => m.EjerciciosvPage)
+  },
+  {
+    path: 'ejerciciost',
+    loadComponent: () => import('./temario/introduccion/tipos-datos-simples/ejerciciost/ejerciciost.page').then( m => m.EjerciciostPage)
+  },
+  {
+    path: 'ejercicioso',
+    loadComponent: () => import('./temario/introduccion/operadores/ejercicioso/ejercicioso.page').then( m => m.EjerciciosoPage)
+  },
 ];

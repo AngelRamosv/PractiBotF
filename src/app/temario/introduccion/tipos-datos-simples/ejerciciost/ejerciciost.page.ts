@@ -20,12 +20,12 @@ interface Progreso {
   tema: string;
 }
 
-const TEMA_PAGINA = 'Introducción'; // 👈 Tema fijo de esta página
+const TEMA_PAGINA = 'Tipos de Datos Simples'; // 👈 Tema fijo de esta página
 
 @Component({
-  selector: 'app-ejercicios',
-  templateUrl: './ejercicios.page.html',
-  styleUrls: ['./ejercicios.page.scss'],
+  selector: 'app-ejerciciost',
+  templateUrl: './ejerciciost.page.html',
+  styleUrls: ['./ejerciciost.page.scss'],
   standalone: true,
   imports: [
     IonContent, IonHeader, IonTitle, IonToolbar,
@@ -36,13 +36,13 @@ const TEMA_PAGINA = 'Introducción'; // 👈 Tema fijo de esta página
   ],
   providers: [AlertController]
 })
-export class EjerciciosPage {
+export class EjerciciostPage {
   selectedLevel: 'basico' | 'intermedio' | 'avanzado' | null = null;
 
   colabUrls = {
-    basico: 'https://colab.research.google.com/drive/1xc3JasGun7dgl52k5nDrUyfu4uXY_4vv#scrollTo=1jxh0CUTGBdr',
-    intermedio: 'https://colab.research.google.com/drive/15x-zHJqVZesN9unkFbDY53o61aBA08dD',
-    avanzado: 'https://colab.research.google.com/drive/11cyKbNe7ZSYpsE1bbLTcpwCp21yIaUcE'
+    basico: 'https://colab.research.google.com/drive/1jmeFem-Jv8wqcRGqupWmleZphVMFjHhp',
+    intermedio: 'https://colab.research.google.com/drive/1c_gDv9iVAhovRSkK-1g7NWZqsrl2awgC',
+    avanzado: 'https://colab.research.google.com/drive/17FQjKdIK3AwQ22v-ajy1rv4ioPSFq_D1'
   };
 
   colabWindow: Window | null = null;
@@ -123,7 +123,7 @@ export class EjerciciosPage {
         clearInterval(this.checkInterval);
         this.calculateScore();
 
-        this.guardarProgreso(); // 💾 siempre guarda (actualiza o crea)
+        this.guardarProgreso(); // 💾 siempre guarda (update o insert)
       }
     }, 1000);
   }
@@ -174,7 +174,7 @@ export class EjerciciosPage {
   }
 
   private getTemaPorNivel(): string {
-    return TEMA_PAGINA; // 👈 Tema fijo de esta página
+    return TEMA_PAGINA; // 👈 Tema fijo
   }
 
   getScoreColor() {

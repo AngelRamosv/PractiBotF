@@ -1,13 +1,32 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>variables</ion-title>
+<ion-header>
+  <ion-toolbar class="main-toolbar">
+    <ion-title class="titulo">Variables</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">variables</ion-title>
-    </ion-toolbar>
-  </ion-header>
+
+<ion-content id="main-content">
+  <div class="content-container">
+    <div class="image-container">
+      <img src="assets/icon/trofeo.png" alt="Trofeo">
+    </div>
+
+    <ion-list lines="full" class="temas-list">
+      <ion-item button detail>
+        <ion-icon name="albums-outline" slot="start" color="primary"></ion-icon>
+        <ion-label>Diapositivas</ion-label>
+      </ion-item>
+
+      <ion-item button detail>
+        <ion-icon name="caret-forward-circle-outline" slot="start" color="primary"></ion-icon>
+        <ion-label>Videos (No disponible)</ion-label>
+      </ion-item>
+
+      <ion-item button detail (click)="irEjerciciosv()">
+        <ion-icon name="code" slot="start" color="primary"></ion-icon>
+        <ion-label>Ejercicios</ion-label>
+      </ion-item>
+
+    </ion-list>
+  </div>
 </ion-content>

@@ -20,12 +20,12 @@ interface Progreso {
   tema: string;
 }
 
-const TEMA_PAGINA = 'Introducción'; // 👈 Tema fijo de esta página
+const TEMA_PAGINA = 'Operadores'; // 👈 Tema fijo de esta página
 
 @Component({
-  selector: 'app-ejercicios',
-  templateUrl: './ejercicios.page.html',
-  styleUrls: ['./ejercicios.page.scss'],
+  selector: 'app-ejercicioso',
+  templateUrl: './ejercicioso.page.html',
+  styleUrls: ['./ejercicioso.page.scss'],
   standalone: true,
   imports: [
     IonContent, IonHeader, IonTitle, IonToolbar,
@@ -36,13 +36,13 @@ const TEMA_PAGINA = 'Introducción'; // 👈 Tema fijo de esta página
   ],
   providers: [AlertController]
 })
-export class EjerciciosPage {
+export class EjerciciosoPage {
   selectedLevel: 'basico' | 'intermedio' | 'avanzado' | null = null;
 
   colabUrls = {
-    basico: 'https://colab.research.google.com/drive/1xc3JasGun7dgl52k5nDrUyfu4uXY_4vv#scrollTo=1jxh0CUTGBdr',
-    intermedio: 'https://colab.research.google.com/drive/15x-zHJqVZesN9unkFbDY53o61aBA08dD',
-    avanzado: 'https://colab.research.google.com/drive/11cyKbNe7ZSYpsE1bbLTcpwCp21yIaUcE'
+    basico: 'https://colab.research.google.com/drive/1hq6SvKh09fj1_L7l9CxKudj3oO-ZhqDx',
+    intermedio: 'https://colab.research.google.com/drive/1dK-Xlq4xkr5eFcuNYoCxQdwXt_PEzeSF',
+    avanzado: 'https://colab.research.google.com/drive/1J7gTLe-FwcWy0HID9O7fJTKdjGW-ENPV'
   };
 
   colabWindow: Window | null = null;
@@ -71,6 +71,7 @@ export class EjerciciosPage {
       return;
     }
 
+    // 🔎 Ahora verifica por NIVEL + TEMA
     this.esEjercicioNuevo = !(await this.verificarEjercicioResuelto());
 
     if (!this.esEjercicioNuevo) {
@@ -86,7 +87,7 @@ export class EjerciciosPage {
       const historial: Progreso[] = JSON.parse(localStorage.getItem('progreso') || '[]');
       const temaActual = this.getTemaPorNivel();
       return historial.some(p =>
-        p.nivel === this.selectedLevel && p.tema === temaActual && p.puntuacion > 0
+        p.nivel === this.selectedLevel && p.tema === temaActual && p.puntuacion > 0 // asegura que esté resuelto de verdad
       );
     } catch (error) {
       console.error('Error al verificar progreso:', error);
@@ -123,7 +124,8 @@ export class EjerciciosPage {
         clearInterval(this.checkInterval);
         this.calculateScore();
 
-        this.guardarProgreso(); // 💾 siempre guarda (actualiza o crea)
+        // 💾 Guardar SIEMPRE (si existe, se actualiza; si no, se crea)
+        this.guardarProgreso();
       }
     }, 1000);
   }
@@ -141,6 +143,8 @@ export class EjerciciosPage {
     else if (timeSpentInMinutes < 15) this.score = 3;
     else if (timeSpentInMinutes < 20) this.score = 2;
     else this.score = 1;
+
+    // ❌ Ya no forzamos score = 0 en repaso; sí queremos ver la calificación
   }
 
   private guardarProgreso() {
@@ -155,14 +159,15 @@ export class EjerciciosPage {
     };
 
     try {
+      // 🔁 UPSERT por (nivel + tema)
       const idx = historial.findIndex(p =>
         p.nivel === nuevoProgreso.nivel && p.tema === nuevoProgreso.tema
       );
 
       if (idx >= 0) {
-        historial[idx] = nuevoProgreso; // actualizar
+        historial[idx] = nuevoProgreso;     // actualiza
       } else {
-        historial.push(nuevoProgreso); // insertar
+        historial.push(nuevoProgreso);      // inserta
       }
 
       localStorage.setItem('progreso', JSON.stringify(historial));
@@ -173,8 +178,9 @@ export class EjerciciosPage {
     }
   }
 
+  // 👇 En esta página el tema es “Variables”
   private getTemaPorNivel(): string {
-    return TEMA_PAGINA; // 👈 Tema fijo de esta página
+    return TEMA_PAGINA;
   }
 
   getScoreColor() {
