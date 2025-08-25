@@ -1,0 +1,53 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="toolbar">
+    <ion-title class="titulo">Ejercicios</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <p id="parrafo">¿Listo para programar?</p>
+
+  <div class="image-container">
+    <img src="assets/icon/code.png" alt="Trofeo">
+  </div>
+
+  <ion-item class="custom-select-item">
+    <ion-select placeholder="Elige el nivel de dificultad" class="custom-select" [(ngModel)]="selectedLevel">
+      <ion-select-option value="basico">Básico</ion-select-option>
+      <ion-select-option value="intermedio">Intermedio</ion-select-option>
+      <ion-select-option value="avanzado">Avanzado</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-button expand="block" class="custom-buttonr" (click)="startExercise()" class="resolver">
+    Resolver en Colab
+  </ion-button>
+
+  <!-- Tarjeta de resultados (solo para ejercicios nuevos) -->
+  <ion-card *ngIf="score > 0 && esEjercicioNuevo" [class]="getScoreCardClass()" class="result-card">
+    <ion-card-header>
+      <ion-card-title>
+        <ion-icon [name]="getScoreIcon()" color="light"></ion-icon>
+        {{ getScoreTitle() }}
+      </ion-card-title>
+      <ion-card-subtitle>Tiempo en Colab: {{ elapsedMinutes | number:'1.0-1' }} minutos</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      <div class="score-display">
+        <div class="score-circle" [style.--percentage]="score * 10">
+          {{ score }}/10
+        </div>
+      </div>
+
+      <ion-progress-bar [value]="score / 10" [color]="getScoreColor()" class="score-bar"></ion-progress-bar>
+
+      <p class="feedback-message">{{ getFeedbackMessage() }}</p>
+
+      <ion-button expand="block" fill="outline" color="light" (click)="resetExercise()" class="retry-button">
+        <ion-icon name="refresh" slot="start"></ion-icon>
+        Intentar otro ejercicio
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

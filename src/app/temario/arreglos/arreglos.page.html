@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar class="main-toolbar">
-    <ion-title class="titulo">Introducción-</ion-title>
+    <ion-title class="titulo">Arreglos</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -12,24 +12,34 @@
 
     <ion-list lines="full" class="temas-list">
 
-      <ion-item button detail (click)="irIdentificadores()">
+      <ion-item button detail (click)="irIntroduccion()">
         <ion-icon [name]="temas[0].icono" slot="start" color="primary"></ion-icon>
         <ion-label>{{ temas[0].nombre }}</ion-label>
       </ion-item>
 
-      <ion-item button detail (click)="irVariables()">
+      <ion-item button detail (click)="irTipos()">
         <ion-icon [name]="temas[1].icono" slot="start" color="primary"></ion-icon>
         <ion-label>{{ temas[1].nombre }}</ion-label>
       </ion-item>
 
-      <ion-item button detail (click)="irTipos()">
+      <ion-item button detail (click)="irArreglosF()">
         <ion-icon [name]="temas[2].icono" slot="start" color="primary"></ion-icon>
         <ion-label>{{ temas[2].nombre }}</ion-label>
       </ion-item>
 
-      <ion-item button detail (click)="irOperadores()">
+      <ion-item button detail (click)="irString()">
         <ion-icon [name]="temas[3].icono" slot="start" color="primary"></ion-icon>
         <ion-label>{{ temas[3].nombre }}</ion-label>
+      </ion-item>
+
+      <ion-item button detail (click)="irStringFunciones()">
+        <ion-icon [name]="temas[4].icono" slot="start" color="primary"></ion-icon>
+        <ion-label>{{ temas[4].nombre }}</ion-label>
+      </ion-item>
+
+      <ion-item button detail>
+        <ion-icon [name]="temas[5].icono" slot="start" color="primary"></ion-icon>
+        <ion-label>{{ temas[5].nombre }}</ion-label>
       </ion-item>
     </ion-list>
   </div>

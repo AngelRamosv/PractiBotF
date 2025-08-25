@@ -1,14 +1,15 @@
 import { Component } from '@angular/core';
-import { 
-  IonHeader, IonToolbar, IonTitle, IonContent, IonMenu, 
-  IonMenuButton, IonButtons, IonList, IonItem, IonLabel, 
-  IonIcon, ToastController, MenuController, AlertController 
+import {
+  IonHeader, IonToolbar, IonTitle, IonContent, IonMenu,
+  IonMenuButton, IonButtons, IonList, IonItem, IonLabel,
+  IonIcon, ToastController, MenuController, AlertController
 } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
-import { 
+import {
   menu, barChart, informationCircle, logOut,
   code, repeat, list, grid, gitMerge, cube,
-  chevronForward, text, documentTextOutline } from 'ionicons/icons';
+  chevronForward, text, documentTextOutline
+} from 'ionicons/icons';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { NavController } from '@ionic/angular';
@@ -42,7 +43,7 @@ export class TemarioPage {
     private alertCtrl: AlertController,
     private navCtrl: NavController
   ) {
-    addIcons({barChart,informationCircle,logOut,documentTextOutline,repeat,list,grid,gitMerge,text,code,menu,cube,chevronForward});
+    addIcons({ barChart, informationCircle, logOut, documentTextOutline, repeat, list, grid, gitMerge, text, code, menu, cube, chevronForward });
   }
 
   async confirmarCierreSesion() {
@@ -104,6 +105,10 @@ export class TemarioPage {
 
   irAIntroduccion() {
     this.navCtrl.navigateForward('/introduccion');
+  }
+
+  irArreglos() {
+    this.navCtrl.navigateForward('/arreglos');
   }
 
   miprogreso() {

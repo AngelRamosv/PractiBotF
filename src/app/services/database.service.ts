@@ -1,21 +1,26 @@
+// Importaciones
 import { Injectable } from '@angular/core';
 import Dexie from 'dexie';
 
+// Decorador para marcar una clase como "inyectable"
 @Injectable({
   providedIn: 'root'
 })
+// Definición de la BD
 export class DatabaseService extends Dexie {
   formularios: Dexie.Table<IFormulario, number>;
 
+  // Constructor
   constructor() {
     super('PractiBotDB');
-    
+
     this.version(1).stores({
       formularios: '++id, usuario, contrasena, matricula, conocimientosProgramacion'
     });
-    
+
     this.formularios = this.table('formularios');
 
+    // Eventos y utilidades
     this.on('ready', () => {
       console.log('%cBase de datos iniciada correctamente', 'color: #4CAF50; font-weight: bold');
       this.mostrarComandosConsola();
@@ -87,6 +92,7 @@ export class DatabaseService extends Dexie {
     console.log('%cdb.borrarProgreso()', 'color: #FF5722', '- Borrar todos los datos de progreso');
   }
 
+  // Método para depuiración y eliminación de datos
   private exponerMetodosDepuracion(): void {
     if (typeof window !== 'undefined') {
       (window as any).db = {
@@ -94,7 +100,7 @@ export class DatabaseService extends Dexie {
         obtenerPorId: (id: number) => this.obtenerUsuarioPorId(id),
         obtenerTodos: () => this.obtenerTodos(),
         buscarPorUsuario: (usuario: string) => this.buscarPorUsuario(usuario),
-          
+
         // Métodos de borrado con confirmación
         borrarUsuario: (id: number) => {
           if (confirm(`¿Estás seguro de borrar el usuario con ID ${id}?`)) {
@@ -104,7 +110,7 @@ export class DatabaseService extends Dexie {
           }
           return Promise.reject('Operación cancelada por el usuario');
         },
-        
+
         borrarTodo: () => {
           if (confirm('¿ESTÁS ABSOLUTAMENTE SEGURO DE BORRAR TODOS LOS REGISTROS?\n\nEsta acción no se puede deshacer.')) {
             return this.borrarTodosLosRegistros()
@@ -113,7 +119,7 @@ export class DatabaseService extends Dexie {
           }
           return Promise.reject('Operación cancelada por el usuario');
         },
-        
+
         borrarProgreso: () => {
           if (confirm('¿Borrar todos los datos de progreso?')) {
             return this.borrarProgreso()
@@ -127,6 +133,7 @@ export class DatabaseService extends Dexie {
   }
 }
 
+// Se define la interfaz para los registros
 export interface IFormulario {
   id?: number;
   usuario: string;
