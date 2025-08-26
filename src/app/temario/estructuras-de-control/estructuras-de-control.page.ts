@@ -75,4 +75,19 @@ export class EstructurasDeControlPage implements OnInit {
     this.navCtrl.navigateForward('/seleccion-simple');
   }
 
+  irCiclos() {
+    this.navCtrl.navigateForward('/seleccion-multiple');
+  }
+
+  irWhile() {
+    this.navCtrl.navigateForward('/while');
+  }
+
+  irDoWhile() {
+    this.navCtrl.navigateForward('/do-while');
+  }
+
+  irFor() {
+    this.navCtrl.navigateForward('/for');
+  }
 }

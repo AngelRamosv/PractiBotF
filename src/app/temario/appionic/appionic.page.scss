@@ -1,0 +1,285 @@
+.toolbar {
+    --background: #3f51b5;
+    color: white;
+    text-align: center;
+}
+
+.info-content {
+    --background: none;
+    background: url('https://previews.123rf.com/images/soulxray/soulxray1709/soulxray170900242/86773048-modern-architecture-and-the-museum-building-in-the-centre-of-mexico-city.jpg') no-repeat center center fixed;
+    background-size: cover;
+    position: relative;
+
+    // Capa overlay para mejorar legibilidad
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, rgba(58, 123, 213, 0.044) 0%, rgba(0, 210, 255, 0.85) 100%);
+        z-index: 0;
+    }
+}
+
+.translucent-toolbar {
+    --background: rgba(255, 255, 255, 0.1);
+    --color: white;
+    backdrop-filter: blur(10px);
+}
+
+.content-container {
+    position: relative;
+    z-index: 1;
+    padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.app-icon-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.app-icon {
+    width: 120px;
+    height: 120px;
+    border-radius: 25px;
+    object-fit: contain;
+    background: rgba(255, 255, 255, 0.7); // Más transparente
+    padding: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.app-title {
+    text-align: center;
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 10px 0 5px 0;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.app-subtitle {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 1.2rem;
+    margin: 0 0 30px 0;
+    font-weight: 500;
+}
+
+.info-card {
+    margin-bottom: 30px;
+
+    ion-card {
+        background: rgba(255, 255, 255, 0.8); // Más transparente
+        backdrop-filter: blur(12px);
+        border-radius: 15px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.25);
+    }
+
+    ion-card-title {
+        color: #3a7bd5;
+        font-weight: 600;
+    }
+
+    ion-card-content {
+        color: #444;
+        line-height: 1.6;
+    }
+}
+
+.features-section {
+    margin: 40px 0;
+
+    h2 {
+        text-align: center;
+        color: white;
+        margin-bottom: 30px;
+        font-size: 1.8rem;
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+}
+
+.feature-item {
+    background: rgba(255, 255, 255, 0.8); // Más transparente
+    border-radius: 15px;
+    padding: 20px;
+    margin: 10px 0;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    height: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+
+    &:hover {
+        transform: translateY(-5px);
+        background: rgba(255, 255, 255, 0.85);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .feature-icon {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #3a7bd5 0%, #00d2ff 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 15px auto;
+
+        ion-icon {
+            font-size: 28px;
+            color: white;
+        }
+    }
+
+    h3 {
+        color: #3a7bd5;
+        margin: 0 0 10px 0;
+        font-size: 1.2rem;
+    }
+
+    p {
+        color: #555;
+        line-height: 1.5;
+        margin: 0;
+    }
+}
+
+.how-it-works {
+    margin: 40px 0;
+
+    h2 {
+        text-align: center;
+        color: white;
+        margin-bottom: 30px;
+        font-size: 1.8rem;
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+}
+
+.steps-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.step {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.8); // Más transparente
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+
+    &:hover {
+        background: rgba(255, 255, 255, 0.85);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .step-number {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #3a7bd5 0%, #00d2ff 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: bold;
+        font-size: 1.5rem;
+        flex-shrink: 0;
+        margin-right: 20px;
+    }
+
+    .step-content {
+        h3 {
+            color: #3a7bd5;
+            margin: 0 0 8px 0;
+            font-size: 1.2rem;
+        }
+
+        p {
+            color: #555;
+            margin: 0;
+            line-height: 1.5;
+        }
+    }
+}
+
+.university-section {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 40px 0 20px 0;
+
+    ion-chip {
+        background: rgba(255, 255, 255, 0.8); // Más transparente
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        transition: all 0.3s ease;
+
+        &:hover {
+            background: rgba(255, 255, 255, 0.85);
+        }
+
+        ion-icon {
+            color: #3a7bd5;
+        }
+
+        ion-label {
+            color: #444;
+            font-weight: 500;
+        }
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .content-container {
+        padding: 15px;
+    }
+
+    .app-title {
+        font-size: 2rem;
+    }
+
+    .app-icon {
+        width: 100px;
+        height: 100px;
+        background: rgba(255, 255, 255, 0.75);
+    }
+
+    .step {
+        flex-direction: column;
+        text-align: center;
+
+        .step-number {
+            margin-right: 0;
+            margin-bottom: 15px;
+        }
+    }
+
+    .features-section {
+        .feature-item {
+            margin-bottom: 20px;
+            background: rgba(255, 255, 255, 0.75);
+        }
+    }
+
+    .info-card {
+        ion-card {
+            background: rgba(255, 255, 255, 0.75);
+        }
+    }
+}

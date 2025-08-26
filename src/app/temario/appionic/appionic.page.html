@@ -1,0 +1,129 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="toolbar">
+    <ion-title>PractiBot</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="info-content">
+  <ion-header collapse="condense">
+    <ion-toolbar class="translucent-toolbar">
+      <ion-title size="large">PractiBot</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <!-- Contenido principal -->
+  <div class="content-container">
+    <div class="app-icon-container">
+      <img src="assets/icon/info.png" alt="PractiBot Icon" class="app-icon">
+    </div>
+
+    <h1 class="app-title">PractiBot</h1>
+    <p class="app-subtitle">Fundamentos de Programación en Python</p>
+
+    <div class="info-card">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>¿Qué es PractiBot?</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <p>PractiBot es una aplicación diseñada para los estudiantes de la Universidad Autónoma Metropolitana Unidad
+            Iztapalapa, enfocada en enseñar los fundamentos de programación en Python mediante ejercicios prácticos y
+            dinámicos.</p>
+        </ion-card-content>
+      </ion-card>
+    </div>
+
+    <div class="features-section">
+      <h2>Características Principales</h2>
+
+      <ion-grid>
+        <ion-row>
+          <ion-col size="12" size-md="6">
+            <div class="feature-item">
+              <div class="feature-icon">
+                <ion-icon name="school"></ion-icon>
+              </div>
+              <h3>Niveles de Dificultad</h3>
+              <p>Ejercicios desde nivel básico hasta avanzado, adaptados a tu progreso de aprendizaje.</p>
+            </div>
+          </ion-col>
+          <ion-col size="12" size-md="6">
+            <div class="feature-item">
+              <div class="feature-icon">
+                <ion-icon name="timer"></ion-icon>
+              </div>
+              <h3>Evaluación por Tiempo</h3>
+              <p>Tu calificación se basa en el tiempo de resolución y el cierre del navegador.</p>
+            </div>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col size="12" size-md="6">
+            <div class="feature-item">
+              <div class="feature-icon">
+                <ion-icon name="bar-chart"></ion-icon>
+              </div>
+              <h3>Seguimiento de Progreso</h3>
+              <p>Visualiza tu avance en la sección "Mi Progreso" del menú de hamburguesa.</p>
+            </div>
+          </ion-col>
+          <ion-col size="12" size-md="6">
+            <div class="feature-item">
+              <div class="feature-icon">
+                <ion-icon name="logo-google"></ion-icon>
+              </div>
+              <h3>Integración con Colab</h3>
+              <p>Ejercicios mostrados en Google Colab para una experiencia de codificación real.</p>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+
+    <div class="how-it-works">
+      <h2>¿Cómo Funciona?</h2>
+      <div class="steps-container">
+        <div class="step">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h3>Selecciona un Ejercicio</h3>
+            <p>Elige entre los diferentes niveles y categorías disponibles.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h3>Resuelve en Google Colab</h3>
+            <p>Completa el ejercicio en el entorno de Colab proporcionado.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h3>Obtén tu Calificación</h3>
+            <p>Tu puntuación se calculará basándose en el tiempo de resolución.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">4</div>
+          <div class="step-content">
+            <h3>Revisa tu Progreso</h3>
+            <p>Monitorea tu mejora en la sección de progreso de la aplicación.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="university-section">
+      <ion-chip>
+        <ion-icon name="library"></ion-icon>
+        <ion-label>Universidad Autónoma Metropolitana</ion-label>
+      </ion-chip>
+      <ion-chip>
+        <ion-icon name="location"></ion-icon>
+        <ion-label>Unidad Iztapalapa</ion-label>
+      </ion-chip>
+    </div>
+  </div>
+</ion-content>

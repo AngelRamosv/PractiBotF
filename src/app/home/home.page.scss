@@ -28,10 +28,10 @@ ion-content {
   width: 150px;
   margin: 50px auto;
   /*animation: floatElegant 4s ease-in-out infinite;*/
-  
+
   img {
     width: 100%;
-    display: block; 
+    display: block;
     /*will-change: transform; /* Optimización de rendimiento */
   }
 }
@@ -55,12 +55,12 @@ ion-content {
 
 .description {
   text-align: center;
-  color:#3d41ab;
+  color: #3d41ab;
   margin: 20px 0;
   font-weight: 500;
   font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
 
-  
+
   /* Decoración moderna */
   &:first-of-type {
     font-size: 1.2em;
@@ -86,13 +86,13 @@ ion-content {
   --background: #3d41ab;
   margin: 0 auto;
   width: 100%;
-  
+
 }
 
 /* Estilo base del código */
 #single-line-code {
   position: relative;
-  display: inline-block;
+  display: block;
   padding: 5px 1px;
   font-family: 'Courier New', monospace;
   font-size: 18px;
@@ -109,12 +109,10 @@ ion-content {
   left: 50%;
   width: 150%;
   height: 200%;
-  background: radial-gradient(
-    circle,
-    rgba(61, 65, 171, 0.15) 0%,
-    rgba(61, 65, 171, 0.05) 50%,
-    transparent 70%
-  );
+  background: radial-gradient(circle,
+      rgba(61, 65, 171, 0.15) 0%,
+      rgba(61, 65, 171, 0.05) 50%,
+      transparent 70%);
   transform: translate(-50%, -50%);
   z-index: -1;
   pointer-events: none;
@@ -123,8 +121,9 @@ ion-content {
 
 /* Añade esto al final de tu home.page.scss */
 #single-line-code {
-  white-space: pre; /* Necesario para mostrar saltos de línea */
-  
+  white-space: pre;
+  /* Necesario para mostrar saltos de línea */
+
   /* Mantenemos tu efecto de cursor cuando está escribiendo */
   &:not(.typing-complete)::before {
     content: '|';
@@ -135,12 +134,11 @@ ion-content {
 
 /* Pequeño ajuste para el contenedor del código */
 .code-container {
+  box-sizing: border-box;
   text-align: center;
   margin: 1px 0;
   background-color: rgba(255, 255, 255, 0.8);
   border-radius: 8px;
-  display: inline-block;
-  width: calc(100% - 40px);
+  display: block;
+  width: 100%;
 }
-
-

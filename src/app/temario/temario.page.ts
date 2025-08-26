@@ -121,7 +121,12 @@ export class TemarioPage {
   irFunciones() {
     this.navCtrl.navigateForward('/funciones');
   }
+
   miprogreso() {
     this.navCtrl.navigateForward('/miprogreso');
+  }
+
+  acerca() {
+    this.navCtrl.navigateForward('/appionic');
   }
 }

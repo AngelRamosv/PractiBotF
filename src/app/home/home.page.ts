@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { 
-  IonHeader, IonToolbar, IonTitle, IonContent, IonButton 
+import {
+  IonHeader, IonToolbar, IonTitle, IonContent, IonButton
 } from '@ionic/angular/standalone';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
@@ -19,9 +19,11 @@ export class HomePage implements OnInit {
   // Solo una línea de código
   codeLine = 'print("Hola Mundo en Python");';
   typingComplete = false;
+  private audio!: HTMLAudioElement; // Usamos el operador ! para indicar que se inicializará después
 
   ngOnInit() {
     this.typeCode();
+    this.playSound();
   }
 
   private async typeCode() {
@@ -30,7 +32,7 @@ export class HomePage implements OnInit {
 
     codeElement.classList.add('permanent-glow');
     codeElement.textContent = '';
-    
+
     // Escribimos solo la línea única
     for (const char of this.codeLine) {
       codeElement.textContent += char;
@@ -44,6 +46,28 @@ export class HomePage implements OnInit {
     return new Promise(resolve => setTimeout(resolve, ms));
   }
 
+  // Reproducir sonido (versión simple)
+  private playSound() {
+    // Crear elemento de audio
+    this.audio = new Audio();
+    this.audio.src = 'assets/sound/estrella.mp3'; // Ruta a tu archivo de sonido
+    this.audio.volume = 0.9; // Volumen al 30%
+    this.audio.load();
+
+    // Intentar reproducir después de una pequeña demora
+    setTimeout(() => {
+      this.audio.play().catch(error => {
+        console.log('La reproducción automática fue prevenida:', error);
+        // Si falla, intentar reproducir después de una interacción del usuario
+        const handler = () => {
+          this.audio.play().catch(e => console.log('Error al reproducir sonido:', e));
+          document.removeEventListener('click', handler);
+        };
+        document.addEventListener('click', handler);
+      });
+    }, 1000);
+  }
+
   Inicio() {
     this.router.navigate(['/inicio']);
   }
@@ -52,5 +76,5 @@ export class HomePage implements OnInit {
     this.router.navigate(['/formulario']);
   }
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) { }
 }

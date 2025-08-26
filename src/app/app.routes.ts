@@ -170,5 +170,41 @@ export const routes: Routes = [
     path: 'ejercicios-simple',
     loadComponent: () => import('./temario/estructuras-de-control/seleccion-simple/ejercicios-simple/ejercicios-simple.page').then( m => m.EjerciciosSimplePage)
   },
+  {
+    path: 'seleccion-multiple',
+    loadComponent: () => import('./temario/estructuras-de-control/seleccion-multiple/seleccion-multiple.page').then( m => m.SeleccionMultiplePage)
+  },
+  {
+    path: 'ejercicios-multiple',
+    loadComponent: () => import('./temario/estructuras-de-control/seleccion-multiple/ejercicios-multiple/ejercicios-multiple.page').then( m => m.EjerciciosMultiplePage)
+  },
+  {
+    path: 'while',
+    loadComponent: () => import('./temario/estructuras-de-control/while/while.page').then( m => m.WhilePage)
+  },
+  {
+    path: 'ejerciciosw',
+    loadComponent: () => import('./temario/estructuras-de-control/while/ejerciciosw/ejerciciosw.page').then( m => m.EjercicioswPage)
+  },
+  {
+    path: 'do-while',
+    loadComponent: () => import('./temario/estructuras-de-control/do-while/do-while.page').then( m => m.DoWhilePage)
+  },
+  {
+    path: 'ejerciciosdw',
+    loadComponent: () => import('./temario/estructuras-de-control/do-while/ejerciciosdw/ejerciciosdw.page').then( m => m.EjerciciosdwPage)
+  },
+  {
+    path: 'for',
+    loadComponent: () => import('./temario/estructuras-de-control/for/for.page').then( m => m.ForPage)
+  },
+  {
+    path: 'ejerciciosf',
+    loadComponent: () => import('./temario/estructuras-de-control/for/ejerciciosf/ejerciciosf.page').then( m => m.EjerciciosfPage)
+  },
+  {
+    path: 'appionic',
+    loadComponent: () => import('./temario/appionic/appionic.page').then( m => m.AppionicPage)
+  },
 
 ];
