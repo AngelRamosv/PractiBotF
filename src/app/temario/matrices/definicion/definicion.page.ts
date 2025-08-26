@@ -10,9 +10,9 @@ import { addIcons } from 'ionicons';
 import { code, repeat, list, grid, gitMerge, text, albumsOutline, caretForwardCircleOutline, codeSlashOutline } from 'ionicons/icons';
 
 @Component({
-  selector: 'app-arreglo-registros',
-  templateUrl: './arreglo-registros.page.html',
-  styleUrls: ['./arreglo-registros.page.scss'],
+  selector: 'app-definicion',
+  templateUrl: './definicion.page.html',
+  styleUrls: ['./definicion.page.scss'],
   standalone: true,
   imports: [
     IonContent,
@@ -29,7 +29,7 @@ import { code, repeat, list, grid, gitMerge, text, albumsOutline, caretForwardCi
     IonLabel
   ]
 })
-export class ArregloRegistrosPage implements OnInit {
+export class DefinicionPage implements OnInit {
   temas = [
     { nombre: 'Diapositivas', icono: 'albums-outline' },
     { nombre: 'Videos (no disponible)', icono: 'caret-forward-circle-outline' },
@@ -50,8 +50,8 @@ export class ArregloRegistrosPage implements OnInit {
   }
 
   //Navega a la página Ejercicios
-  irEjerciciosAR() {
-    this.navCtrl.navigateForward('/ejercicios-ar');
+  irEjerciciosd() {
+    this.navCtrl.navigateForward('/ejerciciosd');
   }
 
 }

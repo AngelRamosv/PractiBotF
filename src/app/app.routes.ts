@@ -104,27 +104,71 @@ export const routes: Routes = [
   },
   {
     path: 'arreglos-funciones',
-    loadComponent: () => import('./temario/arreglos/arreglos-funciones/arreglos-funciones.page').then( m => m.ArreglosFuncionesPage)
+    loadComponent: () => import('./temario/arreglos/arreglos-funciones/arreglos-funciones.page').then(m => m.ArreglosFuncionesPage)
   },
   {
     path: 'ejerciciosarray',
-    loadComponent: () => import('./temario/arreglos/arreglos-funciones/ejerciciosarray/ejerciciosarray.page').then( m => m.EjerciciosarrayPage)
+    loadComponent: () => import('./temario/arreglos/arreglos-funciones/ejerciciosarray/ejerciciosarray.page').then(m => m.EjerciciosarrayPage)
   },
   {
     path: 'string',
-    loadComponent: () => import('./temario/arreglos/string/string.page').then( m => m.StringPage)
+    loadComponent: () => import('./temario/arreglos/string/string.page').then(m => m.StringPage)
   },
   {
     path: 'ejercicio-string',
-    loadComponent: () => import('./temario/arreglos/string/ejercicio-string/ejercicio-string.page').then( m => m.EjercicioStringPage)
+    loadComponent: () => import('./temario/arreglos/string/ejercicio-string/ejercicio-string.page').then(m => m.EjercicioStringPage)
   },
   {
     path: 'string-funciones',
-    loadComponent: () => import('./temario/arreglos/string-funciones/string-funciones.page').then( m => m.StringFuncionesPage)
+    loadComponent: () => import('./temario/arreglos/string-funciones/string-funciones.page').then(m => m.StringFuncionesPage)
   },
   {
     path: 'ejercicios-sf',
-    loadComponent: () => import('./temario/arreglos/string-funciones/ejercicios-sf/ejercicios-sf.page').then( m => m.EjerciciosSFPage)
+    loadComponent: () => import('./temario/arreglos/string-funciones/ejercicios-sf/ejercicios-sf.page').then(m => m.EjerciciosSFPage)
+  },
+  {
+    path: 'arreglo-registros',
+    loadComponent: () => import('./temario/arreglos/arreglo-registros/arreglo-registros.page').then(m => m.ArregloRegistrosPage)
+  },
+  {
+    path: 'ejercicios-ar',
+    loadComponent: () => import('./temario/arreglos/arreglo-registros/ejercicios-ar/ejercicios-ar.page').then(m => m.EjerciciosARPage)
+  },
+  {
+    path: 'matrices',
+    loadComponent: () => import('./temario/matrices/matrices.page').then(m => m.MatricesPage)
+  },
+  {
+    path: 'definicion',
+    loadComponent: () => import('./temario/matrices/definicion/definicion.page').then(m => m.DefinicionPage)
+  },
+  {
+    path: 'ejerciciosd',
+    loadComponent: () => import('./temario/matrices/definicion/ejerciciosd/ejerciciosd.page').then(m => m.EjerciciosdPage)
+  },
+  {
+    path: 'funciones',
+    loadComponent: () => import('./temario/funciones/funciones.page').then( m => m.FuncionesPage)
+  },
+  {
+    path: 'sintaxis',
+    loadComponent: () => import('./temario/funciones/sintaxis/sintaxis.page').then( m => m.SintaxisPage)
+  },
+  {
+    path: 'ejercicios-sintaxis',
+    loadComponent: () => import('./temario/funciones/sintaxis/ejercicios-sintaxis/ejercicios-sintaxis.page').then( m => m.EjerciciosSintaxisPage)
+  },
+  {
+    path: 'estructuras-de-control',
+    loadComponent: () => import('./temario/estructuras-de-control/estructuras-de-control.page').then( m => m.EstructurasDeControlPage)
+  },
+  {
+    path: 'seleccion-simple',
+    loadComponent: () => import('./temario/estructuras-de-control/seleccion-simple/seleccion-simple.page').then( m => m.SeleccionSimplePage)
+  },
+  {
+    path: 'ejercicios-simple',
+    loadComponent: () => import('./temario/estructuras-de-control/seleccion-simple/ejercicios-simple/ejercicios-simple.page').then( m => m.EjerciciosSimplePage)
   },
 
 ];

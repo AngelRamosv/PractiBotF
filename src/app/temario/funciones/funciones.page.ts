@@ -21,9 +21,9 @@ import {
 } from 'ionicons/icons';
 
 @Component({
-  selector: 'app-arreglos',
-  templateUrl: './arreglos.page.html',
-  styleUrls: ['./arreglos.page.scss'],
+  selector: 'app-funciones',
+  templateUrl: './funciones.page.html',
+  styleUrls: ['./funciones.page.scss'],
   standalone: true,
   imports: [
     IonContent,
@@ -40,14 +40,9 @@ import {
     IonLabel
   ]
 })
-export class ArreglosPage implements OnInit {
+export class FuncionesPage implements OnInit {
   temas = [
-    { nombre: 'Introducción', icono: 'git-branch' }, // Representa nombres únicos
-    { nombre: 'Tipos', icono: 'cube' }, // Variables como contenedores
-    { nombre: 'Arreglos y Funciones', icono: 'shapes' }, // Diferentes formas/tipos
-    { nombre: 'String', icono: 'calculator' }, // Operaciones matemáticas
-    { nombre: "String Funciones", icono: 'code' },
-    { nombre: "Arreglo de registros", icono: 'list' }
+    { nombre: 'Sintaxis', icono: 'git-branch' } // Representa nombres únicos
   ];
 
   constructor(private navCtrl: NavController) {
@@ -72,22 +67,7 @@ export class ArreglosPage implements OnInit {
     console.log('Navegando a:', tema);
   }
 
-  irIntroduccion() {
-    this.navCtrl.navigateForward('/introduccion_a');
-  }
-  irTipos() {
-    this.navCtrl.navigateForward('/tipos');
-  }
-  irArreglosF() {
-    this.navCtrl.navigateForward('/arreglos-funciones');
-  }
-  irString() {
-    this.navCtrl.navigateForward('/string');
-  }
-  irStringFunciones() {
-    this.navCtrl.navigateForward('/string-funciones');
-  }
-  irArregloRegistros() {
-    this.navCtrl.navigateForward('/arreglo-registros');
+  irSintaxis() {
+    this.navCtrl.navigateForward('/sintaxis');
   }
 }

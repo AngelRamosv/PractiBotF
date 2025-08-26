@@ -32,8 +32,7 @@ export class TemarioPage {
     { nombre: 'Estructuras de control', icono: 'repeat' },
     { nombre: 'Arreglos', icono: 'list' },
     { nombre: 'Matrices', icono: 'grid' },
-    { nombre: 'Funciones', icono: 'git-merge' },
-    { nombre: 'Strings', icono: 'text' }
+    { nombre: 'Funciones', icono: 'git-merge' }
   ];
 
   constructor(
@@ -107,10 +106,21 @@ export class TemarioPage {
     this.navCtrl.navigateForward('/introduccion');
   }
 
+  irEstructuras() {
+    this.navCtrl.navigateForward('/estructuras-de-control');
+  }
+
   irArreglos() {
     this.navCtrl.navigateForward('/arreglos');
   }
 
+  irMatrices() {
+    this.navCtrl.navigateForward('/matrices');
+  }
+
+  irFunciones() {
+    this.navCtrl.navigateForward('/funciones');
+  }
   miprogreso() {
     this.navCtrl.navigateForward('/miprogreso');
   }

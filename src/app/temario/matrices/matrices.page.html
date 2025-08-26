@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar class="main-toolbar">
+    <ion-title class="titulo">Matrices</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content id="main-content">
+  <div class="content-container">
+    <div class="image-container">
+      <img src="assets/icon/introduccion.png" alt="Usuario">
+    </div>
+
+    <ion-list lines="full" class="temas-list">
+
+      <ion-item button detail (click)="irDefinicion()">
+        <ion-icon [name]="temas[0].icono" slot="start" color="primary"></ion-icon>
+        <ion-label>{{ temas[0].nombre }}</ion-label>
+      </ion-item>
+
+    </ion-list>
+  </div>
+</ion-content>
